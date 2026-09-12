@@ -1,13 +1,517 @@
-@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Systems, Implementation & Full-Stack Computing | md-glitch77</title>
+  <meta name="description" content="Portfolio of md-glitch77 — Systems, Implementation & Full-Stack Computing. Distributed edge architectures, Turso libSQL, Cloudflare R2, Doppler SecretOps, and resilient disaster recovery pipelines.">
+  <meta name="author" content="md-glitch77">
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="md-glitch77 | Systems & Full-Stack Computing">
+  <meta property="og:description" content="Distributed edge architectures, Turso libSQL, Cloudflare R2, Doppler SecretOps, and automated recovery pipelines.">
+  <meta property="og:url" content="https://github.com/md-glitch77">
+
+  <!-- Modern Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background:#0d1117;color:#fff;font-family:sans-serif;display:grid;place-content:center;height:100vh;">
-  <h1>Systems & Software Portfolio</h1>
-  <p>Deployment pipeline active via Cloudflare Pages.</p>
+<body>
+
+  <!-- Ambient Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="topNavbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand" id="brandLink">
+        <span class="brand-badge">MG</span>
+        <span>Systems & Computing</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#matrix" class="nav-link" id="navLinkMatrix">Systems Matrix</a></li>
+        <li><a href="#featured" class="nav-link" id="navLinkFeatured">Install Register</a></li>
+        <li><a href="#education" class="nav-link" id="navLinkEducation">Education</a></li>
+        <li><a href="#contact" class="nav-link" id="navLinkContact">Connect</a></li>
+      </ul>
+
+      <div class="nav-status" id="edgeStatusPill" title="Deployment status verified via Cloudflare Pages edge network">
+        <span class="pulse-dot"></span>
+        <span>CF Edge Active</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill" id="heroStatusPill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span>Systems Architecture • Implementation • Distributed Edge</span>
+          </div>
+
+          <h1 class="hero-title" id="heroHeadline">
+            Architecting <span class="gradient-text">Resilient Systems</span>, Edge Storage & Production Infrastructure.
+          </h1>
+
+          <p class="hero-description" id="heroSummary">
+            Developer specializing in full-stack computing, edge-replicated databases, automated disaster recovery pipelines, and field-ready systems implementation. Engineering zero-cost, high-reliability software architectures with Turso libSQL, Cloudflare R2, and Doppler SecretOps.
+          </p>
+
+          <div class="hero-actions" id="heroActionButtons">
+            <a href="https://github.com/md-glitch77" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="heroGithubBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub (@md-glitch77)</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/miggy-morales/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroLinkedinBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <button type="button" class="btn btn-copy" id="copyEmailBtn" data-email="miggy.morales@gmail.com" title="Click to copy email address">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span id="copyEmailText">Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Live Telemetry Strip -->
+          <div class="telemetry-strip" id="telemetryBar">
+            <div class="telemetry-item">
+              <span class="telemetry-label">Edge Persistence</span>
+              <span class="telemetry-value"><span class="dot"></span> Turso libSQL (SQLite Edge)</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Object Vault</span>
+              <span class="telemetry-value"><span class="dot"></span> Cloudflare R2 / S3</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Secret Orchestration</span>
+              <span class="telemetry-value"><span class="dot"></span> Doppler SecretOps</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">DR Automation</span>
+              <span class="telemetry-value"><span class="dot"></span> Zero-Cost Cron + restore-db</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Systems Matrix Section -->
+    <section class="section" id="matrix">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Architecture & Execution</span>
+          <h2 class="section-title">Core Systems Matrix</h2>
+          <p class="section-subtitle">
+            Engineered disciplines spanning high-throughput backend APIs, globally replicated edge datastores, automated SecretOps pipelines, and field hardware diagnostics.
+          </p>
+        </div>
+
+        <div class="bento-grid" id="matrixGrid">
+          <!-- Card 1: Backend & APIs -->
+          <article class="bento-card col-span-7" id="matrixBackend">
+            <div class="card-icon-box icon-backend">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="card-title">Backend & APIs</h3>
+            <p class="card-description">
+              Production-grade server-side architecture built with strong transactional guarantees, structured logging, defensive validation, and idempotent endpoints designed for uninterrupted operations.
+            </p>
+            <ul class="card-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>RESTful API design with deterministic payload contracts and schema enforcement</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Node.js / Express microservices with comprehensive error boundary middleware</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Strict session management, HMAC signature verification, and secure headers</span>
+              </li>
+            </ul>
+            <div class="tech-pill-list">
+              <span class="tech-pill highlight">Node.js</span>
+              <span class="tech-pill highlight">Express</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">REST APIs</span>
+              <span class="tech-pill">JSON Schema</span>
+              <span class="tech-pill">OAuth / JWT</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Cloud & Edge Storage -->
+          <article class="bento-card col-span-5" id="matrixCloudStorage">
+            <div class="card-icon-box icon-cloud">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="card-title">Cloud & Edge Storage</h3>
+            <p class="card-description">
+              Next-generation edge-native persistence leveraging distributed SQLite and egress-free object stores for ultra-low latency worldwide.
+            </p>
+            <ul class="card-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Turso libSQL:</strong> Serverless distributed SQLite clustered close to clients</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Cloudflare R2:</strong> Zero-egress fee binary asset vault with pre-signed URLs</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Transactional consistency with distributed replicas & instant failover</span>
+              </li>
+            </ul>
+            <div class="tech-pill-list">
+              <span class="tech-pill highlight">Turso libSQL</span>
+              <span class="tech-pill highlight">Cloudflare R2</span>
+              <span class="tech-pill">SQLite</span>
+              <span class="tech-pill">AWS S3 API</span>
+              <span class="tech-pill">Edge CDN</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Infrastructure & DevOps -->
+          <article class="bento-card col-span-6" id="matrixDevops">
+            <div class="card-icon-box icon-devops">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="card-title">Infrastructure & DevOps</h3>
+            <p class="card-description">
+              Fully automated CI/CD lifecycle with centralized secret orchestration, immutable deployments, and self-verifying backup routines.
+            </p>
+            <ul class="card-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>GitHub Actions:</strong> Scheduled DR workflows, automated testing & deployment pipelines</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Doppler SecretOps:</strong> Centralized secrets management with zero plain-text leaks</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Render & Linux:</strong> Containerized runtime instances with healthcheck probes</span>
+              </li>
+            </ul>
+            <div class="tech-pill-list">
+              <span class="tech-pill highlight">GitHub Actions</span>
+              <span class="tech-pill highlight">Doppler SecretOps</span>
+              <span class="tech-pill highlight">Render</span>
+              <span class="tech-pill">Linux / POSIX</span>
+              <span class="tech-pill">CI/CD Automation</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Field Integration & Diagnostics -->
+          <article class="bento-card col-span-6" id="matrixDiagnostics">
+            <div class="card-icon-box icon-field">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h3 class="card-title">Field Integration & Diagnostics</h3>
+            <p class="card-description">
+              Bridging digital systems with physical field operations: real-world hardware asset mapping, site deployment registries, and operational telemetry.
+            </p>
+            <ul class="card-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Multi-site hardware asset registration & maintenance lifecycle audits</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Offline-tolerant field telemetry and conflict-free edge sync</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Comprehensive diagnostic audit trails with cryptographic checksums</span>
+              </li>
+            </ul>
+            <div class="tech-pill-list">
+              <span class="tech-pill highlight">Hardware Registers</span>
+              <span class="tech-pill">Multi-Site Diagnostics</span>
+              <span class="tech-pill">Network Telemetry</span>
+              <span class="tech-pill">Audit Trails</span>
+              <span class="tech-pill">Field Ops</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Deep-Dive Project Section -->
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Engineering Deep Dive</span>
+          <h2 class="section-title">Install Register</h2>
+          <p class="section-subtitle">
+            A mission-critical multi-site hardware asset register designed with distributed edge persistence, zero-trust secrets orchestration, and automated zero-cost disaster recovery.
+          </p>
+        </div>
+
+        <div class="deep-dive-card" id="projectInstallRegister">
+          <!-- Project Header -->
+          <div class="project-header">
+            <div>
+              <div class="project-badge-row">
+                <span class="badge-featured">Production Deep-Dive</span>
+                <span class="badge-status">
+                  <span class="pulse-dot"></span> Active in Production
+                </span>
+              </div>
+              <h3 class="project-title">Multi-Site Hardware Asset Register & DR Engine</h3>
+              <p style="color: var(--text-secondary); max-width: 650px;">
+                Comprehensive tracking system for hardware deployments, warranties, attached spec sheets, and multi-location field installations.
+              </p>
+            </div>
+
+            <div class="project-links">
+              <a href="https://install-register.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="projectLiveDemoBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Live Demo</span>
+              </a>
+
+              <a href="https://github.com/md-glitch77/install-register" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="projectRepoBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Architecture & Narrative Grid -->
+          <div class="architecture-grid">
+            <!-- Narrative Column -->
+            <div class="architecture-narrative">
+              <div class="narrative-block">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Distributed Edge Persistence via Turso libSQL
+                </h4>
+                <p>
+                  Instead of centralizing the database in a traditional monolithic region, the system deploys <strong>Turso (libSQL)</strong>. Database queries execute in sub-millisecond edge replicas with automatic synchronization, maintaining full SQLite ACID transactional integrity while minimizing client response latency worldwide.
+                </p>
+              </div>
+
+              <div class="narrative-block">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Secure S3/R2 Document & Asset Vault
+                </h4>
+                <p>
+                  Equipment datasheets, field commissioning photos, and PDF sign-offs are securely routed to <strong>Cloudflare R2</strong> via S3-compatible endpoints. The app leverages cryptographic presigned upload tokens, eliminating server upload bottlenecks and avoiding costly cloud egress fees.
+                </p>
+              </div>
+
+              <div class="narrative-block">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Centralized SecretOps via Doppler
+                </h4>
+                <p>
+                  All credentials, API tokens, and database connection strings are unified under <strong>Doppler SecretOps</strong>. Environment variables are injected dynamically during build and runtime on Render and GitHub Actions, eliminating local <code>.env</code> file drift and credential leakage.
+                </p>
+              </div>
+
+              <div class="narrative-block">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  Zero-Cost Automated Disaster Recovery Pipeline
+                </h4>
+                <p>
+                  A daily scheduled <strong>GitHub Actions</strong> workflow performs a automated backup cycle: extracting an atomic snapshot from Turso, validating relational checksums, storing encrypted archives, and executing dry-run tests via the custom <code>restore-db.js</code> recovery engine. In a catastrophic outage, full restoration completes in under 60 seconds at zero recurring infrastructure cost.
+                </p>
+              </div>
+            </div>
+
+            <!-- Visual Flow Column -->
+            <div class="architecture-diagram">
+              <div class="diagram-header">
+                <span class="diagram-title">System Architecture & Pipeline Flow</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan);">Live Data Topology</span>
+              </div>
+
+              <!-- Step 1: User / Edge Web Client -->
+              <div class="flow-step">
+                <div class="step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="step-meta">
+                  <div class="step-title">Client Application (Field Technicians)</div>
+                  <div class="step-desc">Web interface on Render • Hardware asset registration & diagnostics</div>
+                </div>
+              </div>
+
+              <div class="flow-arrow">↓ encrypted TLS / Token Auth</div>
+
+              <!-- Step 2: SecretOps & Compute -->
+              <div class="flow-step">
+                <div class="step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <div class="step-meta">
+                  <div class="step-title">Render Service + Doppler SecretOps</div>
+                  <div class="step-desc">Zero-trust credential injection • Secure Express REST API runtime</div>
+                </div>
+              </div>
+
+              <div class="flow-arrow">↓ split data stream</div>
+
+              <!-- Step 3: Dual Storage -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="flow-step" style="padding: 10px;">
+                  <div class="step-meta">
+                    <div class="step-title" style="font-size: 0.82rem; color: var(--accent-cyan);">Turso libSQL</div>
+                    <div class="step-desc">Distributed edge SQL relational data</div>
+                  </div>
+                </div>
+                <div class="flow-step" style="padding: 10px;">
+                  <div class="step-meta">
+                    <div class="step-title" style="font-size: 0.82rem; color: var(--accent-indigo);">Cloudflare R2</div>
+                    <div class="step-desc">Presigned S3 asset attachments</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-arrow">↓ automated scheduled trigger (00:00 UTC)</div>
+
+              <!-- Step 4: GitHub Actions & restore-db.js -->
+              <div class="flow-step" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.04);">
+                <div class="step-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="step-meta">
+                  <div class="step-title" style="color: #34d399;">GitHub Actions DR Pipeline</div>
+                  <div class="step-desc">Automated DB snapshot backup & <code>restore-db.js</code> recovery verification</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Recovery Engine Terminal -->
+          <div class="terminal-window" id="terminalEmulator">
+            <div class="terminal-topbar">
+              <div class="terminal-dots">
+                <span class="tdot tdot-red"></span>
+                <span class="tdot tdot-yellow"></span>
+                <span class="tdot tdot-green"></span>
+              </div>
+              <span class="terminal-label">restore-db.js — Automated DR Recovery Engine Simulator</span>
+              <button type="button" id="runSimulationBtn" style="background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); border-radius: 4px; padding: 3px 10px; font-family: var(--font-mono); font-size: 0.72rem; cursor: pointer;">Re-run Diagnostics</button>
+            </div>
+            <div class="terminal-body" id="terminalOutput">
+              <p><span class="term-info">guest@edge-dr-node:~$</span> <span class="term-cmd">node restore-db.js --dry-run --verify-checksums</span></p>
+              <p><span class="term-info">[00:00:01 UTC]</span> Initiating automated disaster recovery verification pipeline...</p>
+              <p><span class="term-info">[00:00:02 UTC]</span> Doppler SecretOps: Fetching production libSQL credentials... <span class="term-success">OK</span></p>
+              <p><span class="term-info">[00:00:03 UTC]</span> Turso Edge Cluster: Querying primary partition health... <span class="term-success">LATENCY: 12ms</span></p>
+              <p><span class="term-info">[00:00:04 UTC]</span> Cloudflare R2: Validating asset vault read/write permissions... <span class="term-success">VERIFIED</span></p>
+              <p><span class="term-info">[00:00:05 UTC]</span> Snapshot: Generating point-in-time binary archive (SHA256: 4f8b9...e10a)... <span class="term-success">VALID</span></p>
+              <p><span class="term-info">[00:00:06 UTC]</span> Dry-run sandbox database initialized. Replaying 1,420 asset transactions...</p>
+              <p><span class="term-success">[00:00:07 UTC] ✓ DISASTER RECOVERY TEST SUCCESSFUL: 0 data corruption detected. Zero-cost automated pipeline active.</span></p>
+              <p><span class="term-info">guest@edge-dr-node:~$</span> <span class="term-cursor"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education & Certifications</h2>
+          <p class="section-subtitle">
+            Formal computing and technical foundations grounded in computing theory, distributed networks, and modern software engineering.
+          </p>
+        </div>
+
+        <div class="education-card" id="eduOpenUniversity">
+          <div class="edu-badge-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-content">
+            <div class="edu-institution">The Open University</div>
+            <h3 class="edu-degree">BSc (Hons) Computing & IT</h3>
+            <p class="edu-description">
+              Rigorous curriculum covering computer systems architecture, network engineering, distributed database principles, object-oriented software engineering, information security, and software project management.
+            </p>
+            <div class="edu-topics">
+              <span class="tech-pill highlight">Systems Architecture</span>
+              <span class="tech-pill highlight">Distributed Databases</span>
+              <span class="tech-pill">Network Protocols</span>
+              <span class="tech-pill">Software Engineering</span>
+              <span class="tech-pill">Information Security</span>
+              <span class="tech-pill">Data Structures & Algorithms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect / CTA Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta-banner" id="ctaBanner">
+          <h2 class="cta-title">Ready to Architect Reliable Solutions?</h2>
+          <p class="cta-desc">
+            Whether you need to engineer high-throughput edge systems, automate critical recovery workflows, or deploy robust full-stack infrastructure, let's connect.
+          </p>
+          <div class="cta-actions">
+            <a href="https://github.com/md-glitch77" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="ctaGithubBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>Explore GitHub</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/miggy-morales/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="ctaLinkedinBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Connect on LinkedIn</span>
+            </a>
+
+            <a href="mailto:miggy.morales@gmail.com" class="btn btn-copy" id="ctaEmailBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Send Direct Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="mainFooter">
+    <div class="container footer-container">
+      <div class="footer-meta">
+        <span style="font-weight: 600; color: var(--text-highlight);">md-glitch77 • Systems & Full-Stack Computing</span>
+        <span class="footer-copy">© 2026. Built with Vanilla HTML5, CSS & JS. Automatically deployed via Cloudflare Pages edge.</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/md-glitch77" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/miggy-morales/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="https://install-register.onrender.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Install Register Live</a>
+        <a href="#heroSection" class="footer-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div class="toast" id="toastMessage" role="alert" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastText">Copied to clipboard!</span>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
-"@ | Out-File -FilePath index.html -Encoding utf8
